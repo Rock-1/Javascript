@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/entrance.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="lib/UUWebViewFramework.js" charset="UTF-8"></script>
+    <!--<script type="text/javascript" src="js/text.js"></script>-->
+    <title>水费</title>
+    <style>
+    </style>
+</head>
+<body>
+<div id="XS" class="container-fluid ">
+    <div id="explore"> 　<img src="image/explore/back.png" onclick="window.history.back()">　水费
+        <span style="float: right;margin-right: 10px;color: #FB8C00;font-size: 32px;">
+              沈阳<img src="image/ele/unfold.png"></span></div>
+    <!-- <div id="explore">　<img src="image/explore/back.png" onclick="window.history.back()">　电费
+         <span style="float: right;margin-right: 10px;color: #FB8C00;font-size: 32px" >沈阳<img
+                 src="image/ele/unfold.png"></span></div>-->
+
+    <div class="div">　缴费单位 <span style="float: right;margin-right: 10px;color: #DBDBDB;font-size: 30px">沈阳市供水公司</span>
+    </div>
+
+    <div class="div">　缴费方式　
+        <label>
+            　　
+            <div data-bind='event:{click:$root.rada}'><img id="a" src="image/ele/choose.png"><input type="radio"
+                                                                                                    name="vip" value="1"
+                                                                                                    checked="checked"/>
+            </div>
+        </label><span>户号</span>
+        <label>
+            　　
+            <div data-bind='event:{click:$root.rad}'><img id="b" src="image/ele/normal.png"><input type="radio"
+                                                                                                   name="vip" value="0">
+            </div>
+        </label><span>条形码</span>
+    </div>
+
+    <div class="div">　<span data-bind="text:userID"></span>　　
+        <span style="margin-right: 10px;color: #DBDBDB;font-size: 30px"><input  style="border: 0px" name="bill" data-bind="event:{change:$root.verify}"
+                                                                               type="text" value="查看纸质账单"
+                                                                               onfocus="if (value =='查看纸质账单'){value =''}"
+                                                                               onblur="if (value ==''){value='查看纸质账单'}"/>
+            <img  name="Img" style="float: right;vertical-align: middle;color: #FB8C00;font-size: 32px;"></span>
+    </div>
+    <div style="background-color: #fafafa;height: 32px;">
+    </div>
+    <div class="div" style="border-top: 1px solid #c8c8c8;">　分组<br>
+
+        <div style="font-size: 30px;color: #757575;padding:30px 0;">
+            　　<label name="nba" class="checked"><input type="radio" value="0" name="i" checked="checked"><img
+                src="image/ele/choose.png" data-bind='event:{click:$root.group}'></label>我家
+            　 <label><input type="radio" name="i" value="1"><img src="image/ele/normal.png"
+                                                                 data-bind='event:{click:$root.group}'></label>父母
+            　<label><input type="radio" name="i" value="2"><img src="image/ele/normal.png"
+                                                                data-bind='event:{click:$root.group}'></label>朋友
+            　<label><input type="radio" name="i" value="3"><img src="image/ele/normal.png"
+                                                                data-bind='event:{click:$root.group}'></label>房东
+        </div>
+    </div>
+    <div id="div" style="height: 30px">
+    </div>
+    <button class="btn btn-large btn-block btn-lg" disabled data-bind="event:{click:$root.water_pay}">下一步</button>
+
+</div>
+<script>
+    Niman.use("./js/main.js", function (obj) {
+        console.log(obj)
+    });
+    Niman.config({});
+</script>
+</body>
+</html>
